@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="第一章  主要說明了javascript熱門的第三方庫，以及為何選擇jQuery的原因，用最簡單的方式做最多的實現，振奮人心的開場。  score: 9/10 第二章  說明了安裝流程， $(‘’)的jQuery包裝器， 以及不需要用到$(document).ready(function(){})的地方(與DOM無關的語句)，用jQuery別名防止第三方庫衝突，用jQuery取代javascrip">
+<meta name="description" content="第一章  分析了javascript熱門的第三方庫，為何從中選擇jQuery，振奮人心的開場，用最簡單的方式做最多的實現，  score: 9/10 第二章  安裝流程，說明了$(‘’)的jQuery包裝器，不需要用到$(document).ready(function(){})的地方–與DOM無關的語句，用jQuery別名防止第三方庫的衝突，試圖用jQuery取代javascript?  9/1">
 <meta name="keywords" content="javascript,jQuery">
 <meta property="og:type" content="article">
 <meta property="og:title" content="精彩絕倫的jQuery-全本結論">
 <meta property="og:url" content="http://yoursite.com/2017/07/11/精彩絕倫的jQuery-全本結論/index.html">
-<meta property="og:site_name" content="Shayqi&#39;s blog">
-<meta property="og:description" content="第一章  主要說明了javascript熱門的第三方庫，以及為何選擇jQuery的原因，用最簡單的方式做最多的實現，振奮人心的開場。  score: 9/10 第二章  說明了安裝流程， $(‘’)的jQuery包裝器， 以及不需要用到$(document).ready(function(){})的地方(與DOM無關的語句)，用jQuery別名防止第三方庫衝突，用jQuery取代javascrip">
-<meta property="og:updated_time" content="2017-07-11T14:25:06.646Z">
+<meta property="og:site_name" content="天堂的懸崖">
+<meta property="og:description" content="第一章  分析了javascript熱門的第三方庫，為何從中選擇jQuery，振奮人心的開場，用最簡單的方式做最多的實現，  score: 9/10 第二章  安裝流程，說明了$(‘’)的jQuery包裝器，不需要用到$(document).ready(function(){})的地方–與DOM無關的語句，用jQuery別名防止第三方庫的衝突，試圖用jQuery取代javascript?  9/1">
+<meta property="og:updated_time" content="2017-07-11T18:37:21.171Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="精彩絕倫的jQuery-全本結論">
-<meta name="twitter:description" content="第一章  主要說明了javascript熱門的第三方庫，以及為何選擇jQuery的原因，用最簡單的方式做最多的實現，振奮人心的開場。  score: 9/10 第二章  說明了安裝流程， $(‘’)的jQuery包裝器， 以及不需要用到$(document).ready(function(){})的地方(與DOM無關的語句)，用jQuery別名防止第三方庫衝突，用jQuery取代javascrip">
+<meta name="twitter:description" content="第一章  分析了javascript熱門的第三方庫，為何從中選擇jQuery，振奮人心的開場，用最簡單的方式做最多的實現，  score: 9/10 第二章  安裝流程，說明了$(‘’)的jQuery包裝器，不需要用到$(document).ready(function(){})的地方–與DOM無關的語句，用jQuery別名防止第三方庫的衝突，試圖用jQuery取代javascript?  9/1">
 
 
 
@@ -137,7 +137,7 @@
 
 
 
-  <title>精彩絕倫的jQuery-全本結論 | Shayqi's blog</title>
+  <title>精彩絕倫的jQuery-全本結論 | 天堂的懸崖</title>
   
 
 
@@ -173,7 +173,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Shayqi's blog</span>
+        <span class="site-title">天堂的懸崖</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -203,7 +203,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            首頁
+            入口
           </a>
         </li>
       
@@ -213,7 +213,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            歸檔
+            階梯
           </a>
         </li>
       
@@ -223,7 +223,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            標籤
+            精靈
           </a>
         </li>
       
@@ -265,7 +265,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Shayqi's blog">
+      <meta itemprop="name" content="天堂的懸崖">
     </span>
 
     
@@ -336,19 +336,19 @@
       
 
       
-        <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>  主要說明了javascript熱門的第三方庫，以及為何選擇jQuery的原因，用最簡單的方式做最多的實現，振奮人心的開場。<br>  <em>score: 9/10</em></p>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>  說明了安裝流程， $(‘’)的jQuery包裝器， 以及不需要用到$(document).ready(function(){})的地方(與DOM無關的語句)，用jQuery別名防止第三方庫衝突，用jQuery取代javascript!?<br>  <em>9/10</em></p>
-<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><p>  DOM選擇器，過濾器(:eq()/:gt()/:lt()/:not/:even、odd/:empty/:hidden/:visible/:has()…等等，及基於jQuery選擇器所做的一些簡單範例<br>  <em>8.5/10</em></p>
+        <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>  分析了javascript熱門的第三方庫，為何從中選擇jQuery，振奮人心的開場，用最簡單的方式做最多的實現，<br>  <em>score: 9/10</em></p>
+<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>  安裝流程，說明了$(‘’)的jQuery包裝器，不需要用到$(document).ready(function(){})的地方–與DOM無關的語句，用jQuery別名防止第三方庫的衝突，試圖用jQuery取代javascript?<br>  <em>9/10</em></p>
+<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><p>  DOM樹選擇器，過濾器(:eq()/:gt()/:lt()/:not/:even、odd/:empty/:hidden/:visible/:has()…等，及基於jQuery選擇器所做的一些簡單範例<br>  <em>8.5/10</em></p>
 <a id="more"></a>
-<h2 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h2><p>  事件，有些部份過時了，例如unload事件只能以on(‘beforeunload’)方式調用，以及基於bind()和live()上更方便的on方法，error同樣也只能以on方式調用。除此之外，ready比之原生onload更快原因在於DOM加載完後便執行ready，而不會等待全頁面加載完後。以及預加載:load()加載完後便插入DOM而不是依照順序。<br>  .hover是使用了mouse的enter與leave，避免了over/out的事件冒泡等問題。簡略了介紹:綁定、頁面、鼠標、鍵盤、表單的通用事件。<br>  <em>6/10</em></p>
-<h2 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h2><p>  特效，講述了基本方法(show/hide/toggle/ slideDown/slideUp/slideToggle fadeIn/fadeOut/fadeTo)以及.delay(duration [,queue])延時效果，queue參數無詳解;<br>  jQuery的鏈式調用，利用end()返回操作對象的前一個對象，以及<strong>相當差的圖片相冊示例。</strong><br>  (自己搞了很久，a無法點擊原因在於被absolute元素所覆蓋，動畫插件要於options內設定easing值)<br>  <em>6.5/10</em></p>
-<h2 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h2><p>  下拉菜單高亮示例的css設置錯誤(已修正)，折疊+使用精靈圖箭頭(header與icon各使用一個active類)，標籤nav已參考源碼完成css配置，對於思路及架構說明還不錯，缺點是必須先將頁面完成才知道要做哪些事&amp;版面配置存在一些錯誤/缺少(汗)<br>  <em>5.5/10</em></p>
-<h2 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h2><p>  利用表格建置美觀的數據展示，簡單說明了常見的條紋式、懸停式、crud操作，如何展示特價信息的方式，利用了(源碼)建構的分頁技術，主要用了slice(start[,end])進行顯示數據的控制。<br>  tablesorter庫(表格排序)、visualize(表格可視化圖表、只有1.4.2版jq可套用，網上已建壯成商用)<br>  <em>6/10</em></p>
-<h2 id="第八章"><a href="#第八章" class="headerlink" title="第八章"></a>第八章</h2><p>  表單-disabled屬性/ focus/blur方法 ，實現placeholder寫法，重複了一次第五章的字數限制示例….(全選與反選在checked屬性無論如何都會被勾選，必須以內在特性.prop()設定)，驗證判斷三種結果(‘’,error,success)用正則.test匹配正確值，表單值獲取用.val()，複製-將值保存後利用事件(點擊)賦值。<br>  qtip庫(tooltip)書上已過時，自玩了3.0.3版，的確是相當好的第三方庫。(註:作者的label標籤一直用錯= =)<br>  validate庫，添加required類，說明了一些基本規則用法，對於需要驗證多數據表單應該相當好用。<br>  <em>5.5/10</em></p>
-<h2 id="第九章"><a href="#第九章" class="headerlink" title="第九章"></a>第九章</h2><p>  Ajax，基本.load(url[,data][,callback(responseText,textStatus,XMLHttpRequest)]))的用法，響應碼通過XMLHttpRequest.status傳給瀏覽器。<br>  常見響應碼:{<br>    200:成功;<br>    301:永久跳轉;    302:臨時跳轉;<br>    400:錯誤請求;    401:未授權    403:禁止訪問    404:未找到<br>    500:服務器錯誤<br>  }url內也可載入指定的class/id/tag name<br>  get，post方法理解，.ajax([settings])載入內容，介紹了一個delicious API..此網站已轉行<br>  跨域傳輸JSON數據-JSONP，yelp要用post方法獲取訪問令牌太麻煩，暫略…<br>  (基本的ajax)jsonp技術是使用函數包裝json資料，以url後+callback方式載入，.ajax()已打包好這一切，在datatype:’jsonp’設定即可。<br>  <em>4/10</em></p>
-<h2 id="第十章"><a href="#第十章" class="headerlink" title="第十章"></a>第十章</h2><p>  jQueryUI方法已不合時宜，但主要還是介紹了幾個常用組件，tabs/accordion/autocomplete/datepicker，及更小的UI庫-jQuery Tools(包含6組件:tabs/tooltips/overlays/scrolling/forms/toolboxes)簡化以提升效能，不包含css，改造或優化考慮，此處略…還有類似於lightbox的輕量庫-fancybox介紹，可以將圖片層從頁面中提出展示。<br>  自寫插件，書中還是有不少疏漏，所幸有抓源碼…<br>  發布插件:1.測試是否兼容所有瀏覽器 2.README 說明選項含義及工作原理 3.選擇開源許可協議<br>  打包插件:文檔&lt;4kb則略，否則使用代碼壓縮器最小化文檔<br>  發布:plugins.jquery.com &amp;&amp; code.google.com/hosting<br>  <em>6/10</em></p>
-<h2 id="第十一-amp-十二章"><a href="#第十一-amp-十二章" class="headerlink" title="第十一&amp;十二章"></a>第十一&amp;十二章</h2><p>  用Mod_rewrite模塊重定向用戶瀏覽器，指向pc或mobile web。<br>  說了一下jQuery Mobile、其它移動框架:查了一下，如react_Native，ionic等目前都已經十分強大，書中提的sencha touch從jQtouch而來，也可參考。<br>  jQuery各式資源匯整，論壇、大會等…<br>  <em>8/10</em></p>
-<h2 id="全書總評"><a href="#全書總評" class="headerlink" title="全書總評"></a>全書總評</h2><p>  說明足夠白話，但深入理解不足，大多需靠自已補充(大推jQuery api 中文文檔)，示例易懂，不失精采。<br>  <em>avg: 6.73/10</em></p>
+<h2 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h2><p>  事件，有些部份過時了，例如unload事件只能以on(‘beforeunload’)方式調用，還有超越老套的bind()和live()上更方便的on方法，error也只能以on調用。此外，ready比之原生onload方法更快的原因在於DOM加載完後便執行ready，而不是等待全頁面加載完。需注意，預加載:load()方法加載完後便會直接插入DOM而非依照順序。<br>  .hover事件合併了mouse的enter與leave，同時避免了over &amp; out的事件冒泡問題。粗略帶過了:綁定、頁面、鼠標、鍵盤、表單的通用事件。<br>  <em>6/10</em></p>
+<h2 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h2><p>  特效，講述了基本方法(show/hide/toggle/ slideDown/slideUp/slideToggle fadeIn/fadeOut/fadeTo)以及.delay(duration [,queue])延時效果，queue參數無詳解;<br>  jQuery的鏈式調用，利用了end()返回操作對象的前一個對象，以及<strong>相當差的圖片相冊示例。</strong><br>  (搞了很久，示例a元素無法點擊原因在於被absolute元素所覆蓋，另，動畫插件要於options內設定easing值)<br>  <em>6.5/10</em></p>
+<h2 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h2><p>  下拉菜單高亮示例的css設置錯誤(自修正)，折疊搭配精靈圖箭頭(header與icon各使用一個active類)。標籤nav參考源碼完成css配置，思路及架構說明還不錯，缺點是必須將頁面完成才知道要做哪些事&amp;版面配置存在一些錯誤/缺少(汗)<br>  <em>5.5/10</em></p>
+<h2 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h2><p>  利用表格建置美觀的數據展示，簡單說明了常見的條紋式、懸停式、crud操作，如何展示特價信息的方式，利用(網上抓的源碼)建構的分頁技術，主要是用了slice(start[,end])進行顯示數據的控制。<br>  值得一提的兩個庫:tablesorter庫(表格排序)、visualize(表格可視化圖表、測試只有1.4.2版可讓jq套用，網上已建壯成商用)<br>  <em>6/10</em></p>
+<h2 id="第八章"><a href="#第八章" class="headerlink" title="第八章"></a>第八章</h2><p>  表單-disabled屬性/ focus/blur方法 ，實現placeholder寫法，重複了一次第五章的字數限制示例….(全選與反選在checked屬性無論如何都會被勾選，必須使用內在特性.prop()設定)，驗證判斷三種結果(‘’,error,success)用正則.test匹配正確值，.val()獲取表單值，複製技巧-將值保存後利用事件(點擊)賦值。<br>  qtip庫(tooltip)書上已過時，測試了3.0.3版，的確相當好用。(註:作者的label標籤一直用錯…)<br>  validate庫，添加required類，說明了一些基本規則用法，對於需要驗證多數據表單應該不錯。<br>  <em>5.5/10</em></p>
+<h2 id="第九章"><a href="#第九章" class="headerlink" title="第九章"></a>第九章</h2><p>  Ajax，基本.load(url[,data][,callback(responseText,textStatus,XMLHttpRequest)]))的用法，響應碼通過XMLHttpRequest.status傳給瀏覽器。<br>  常見響應碼:{<br>&emsp;&emsp;200:成功;<br>&emsp;&emsp;301:永久跳轉;    302:臨時跳轉;<br>&emsp;&emsp;400:錯誤請求;    401:未授權    403:禁止訪問    404:未找到<br>&emsp;&emsp;500:服務器錯誤<br>  }url內也可載入指定的class/id/tag name<br>  get，post方法說明，.利用ajax([settings])載入內容，介紹了一個delicious API..此網站已轉行<br>  跨域傳輸JSON數據的JSONP技術，練習到yelp要用post方法獲取訪問令牌太過麻煩，暫略…<br>  老掉牙的補充說明:基本的ajax–jsonp技術是使用函數包裝json資料，以url後+callback方式載入，而jQuery的.ajax()已打包好這一切，在datatype:’jsonp’設定即可。<br>  <em>4/10</em></p>
+<h2 id="第十章"><a href="#第十章" class="headerlink" title="第十章"></a>第十章</h2><p>  jQueryUI方法現在來看已頗不合時宜，但主要還是介紹了幾個常用組件，tabs/accordion/autocomplete/datepicker，及更小的UI庫-jQuery Tools(包含6組件:tabs/tooltips/overlays/scrolling/forms/toolboxes)目的為簡化以提升效能，但不包括css，改造或優化再做考慮，此處略…<br>  還有類似於lightbox的輕量庫-fancybox介紹，可以將圖片層從頁面中提出展示。<br>  自寫插件，書中有不少疏漏，所幸有抓源碼…<br>  發布插件三步驟:<br>&emsp;&emsp;<em>1.測試是否兼容所有瀏覽器<br>&emsp;&emsp;</em>2.README 說明選項含義及工作原理<br>&emsp;&emsp;<em>3.選擇開源許可協議</em><br>  打包插件: 若源碼&lt;4kb則略，否則建議使用代碼壓縮器最小化<br>  可發布站點 : plugins.jquery.com &nbsp;&amp;&amp; &nbsp; code.google.com/hosting<br>  <em>6/10</em></p>
+<h2 id="第十一-amp-十二章"><a href="#第十一-amp-十二章" class="headerlink" title="第十一&amp;十二章"></a>第十一&amp;十二章</h2><p>  用Apache的Mod_rewrite模塊重定向用戶瀏覽器，用以檢查各種移動設備…<br>  再談jQuery Mobile、其它移動框架，現已十分強大的如react_Native，ionic，還有書中提的sencha touch是從jQtouch而來，也可供參考。<br>  還有一些jQuery資源匯整，論壇、大會等…<br>  <em>8/10</em></p>
+<h2 id="全書總評"><a href="#全書總評" class="headerlink" title="全書總評"></a>全書總評</h2><p>  說明足夠白話，但深入理解不足，大多需靠自已補充(大推jQuery api 中文文檔)，但示例易懂，尚不失精采。<br>  <em>avg: 6.73/10</em></p>
 
       
     </div>
@@ -472,10 +472,10 @@
             
             
             <div class="site-state-item site-state-tags">
-              
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">標籤</span>
-              
+              </a>
             </div>
           
 
@@ -544,23 +544,10 @@
   &copy; 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="fa fa-random"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">shayqi</span>
 </div>
-
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 強力驅動
-</div>
-
-<div class="theme-info">
-  主題 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
-  </a>
-</div>
-
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
@@ -713,4 +700,5 @@
   
 
 </body>
+<script type="text/javascript" src="/js/src/particle.js" count="50" zindex="-2" opacity="1" color="0,104,183"></script>
 </html>
