@@ -1677,7 +1677,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fff;
+  background: #f577d1;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1813,6 +1813,21 @@ pre .javascript .function {
   #sidebar-dimmer {
     display: block;
   }
+}
+.site-author-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 96px;
+  height: auto;
+  border: 2px solid #333;
+  padding: 2px;
+/* start */
+  border-radius: 50%;
+  webkit-transition: 1.4s all;
+  moz-transition: 1.4s all;
+  ms-transition: 1.4s all;
+  transition: 1.4s all;
+/* end */
 }
 .footer {
   font-size: 14px;
