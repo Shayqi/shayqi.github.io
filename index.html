@@ -337,21 +337,16 @@
 
       
         
-          
-            <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>  主要說明了javascript熱門的第三方庫，以及為何選擇jQuery的原因，用最簡單的方式做最多的實現，振奮人心的開場。<br>  <em>score: 9/10</em></p>
+          <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>  主要說明了javascript熱門的第三方庫，以及為何選擇jQuery的原因，用最簡單的方式做最多的實現，振奮人心的開場。<br>  <em>score: 9/10</em></p>
 <h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>  說明了安裝流程， $(‘’)的jQuery包裝器， 以及不需要用到$(document).ready(function(){})的地方(與DOM無關的語句)，用jQuery別名防止第三方庫衝突，用jQuery取代javascript!?<br>  <em>9/10</em></p>
-<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><p>  DOM選擇器，過濾器(:eq()/:gt()/:lt()/:not/:even、odd/:empty/:hidden/:visible/:has()…等等，及基於jQuery選擇器所做的一些簡單範例<br>  <em>8.5/10</em></p>
-<h2 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h2><p>  事件，有些部份過時了，例如unload事件只能以on(‘beforeunload’)方式調用，以及基於bind()和live()上更方便的on方法，error同樣也只能以on方式調用。除此之外，ready比之原生onload更快原因在於DOM加載完後便執行ready，而不會等待全頁面加載完後。以及預加載:load()加載完後便插入DOM而不是依照順序。<br>  .hover是使用了mouse的enter與leave，避免了over/out的事件冒泡等問題。簡略了介紹:綁定、頁面、鼠標、鍵盤、表單的通用事件。<br>  <em>6/10</em></p>
-<h2 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h2><p>  特效，講述了基本方法(show/hide/toggle/ slideDown/slideUp/slideToggle fadeIn/fadeOut/fadeTo)以及.delay(duration [,queue])延時效果，queue參數無詳解;<br>  jQuery的鏈式調用，利用end()返回操作對象的前一個對象，以及<strong>相當差的圖片相冊示例。</strong><br>  (自己搞了很久，a無法點擊原因在於被absolute元素所覆蓋，動畫插件要於options內設定easing值)<br>  <em>6.5/10</em></p>
-<h2 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h2><p>  下拉菜單高亮示例的css設置錯誤(已修正)，折疊+使用精靈圖箭頭(header與icon各使用一個active類)，標籤nav已參考源碼完成css配置，對於思路及架構說明還不錯，缺點是必須先將頁面完成才知道要做哪些事&amp;版面配置存在一些錯誤/缺少(汗)<br>  <em>5.5/10</em></p>
-<h2 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h2><p>  利用表格建置美觀的數據展示，簡單說明了常見的條紋式、懸停式、crud操作，如何展示特價信息的方式，利用了(源碼)建構的分頁技術，主要用了slice(start[,end])進行顯示數據的控制。<br>  tablesorter庫(表格排序)、visualize(表格可視化圖表、只有1.4.2版jq可套用，網上已建壯成商用)<br>  <em>6/10</em></p>
-<h2 id="第八章"><a href="#第八章" class="headerlink" title="第八章"></a>第八章</h2><p>  表單-disabled屬性/ focus/blur方法 ，實現placeholder寫法，重複了一次第五章的字數限制示例….(全選與反選在checked屬性無論如何都會被勾選，必須以內在特性.prop()設定)，驗證判斷三種結果(‘’,error,success)用正則.test匹配正確值，表單值獲取用.val()，複製-將值保存後利用事件(點擊)賦值。<br>  qtip庫(tooltip)書上已過時，自玩了3.0.3版，的確是相當好的第三方庫。(註:作者的label標籤一直用錯= =)<br>  validate庫，添加required類，說明了一些基本規則用法，對於需要驗證多數據表單應該相當好用。<br>  <em>5.5/10</em></p>
-<h2 id="第九章"><a href="#第九章" class="headerlink" title="第九章"></a>第九章</h2><p>  Ajax，基本.load(url[,data][,callback(responseText,textStatus,XMLHttpRequest)]))的用法，響應碼通過XMLHttpRequest.status傳給瀏覽器。<br>  常見響應碼:{<br>    200:成功;<br>    301:永久跳轉;    302:臨時跳轉;<br>    400:錯誤請求;    401:未授權    403:禁止訪問    404:未找到<br>    500:服務器錯誤<br>  }url內也可載入指定的class/id/tag name<br>  get，post方法理解，.ajax([settings])載入內容，介紹了一個delicious API..此網站已轉行<br>  跨域傳輸JSON數據-JSONP，yelp要用post方法獲取訪問令牌太麻煩，暫略…<br>  (基本的ajax)jsonp技術是使用函數包裝json資料，以url後+callback方式載入，.ajax()已打包好這一切，在datatype:’jsonp’設定即可。<br>  <em>4/10</em></p>
-<h2 id="第十章"><a href="#第十章" class="headerlink" title="第十章"></a>第十章</h2><p>  jQueryUI方法已不合時宜，但主要還是介紹了幾個常用組件，tabs/accordion/autocomplete/datepicker，及更小的UI庫-jQuery Tools(包含6組件:tabs/tooltips/overlays/scrolling/forms/toolboxes)簡化以提升效能，不包含css，改造或優化考慮，此處略…還有類似於lightbox的輕量庫-fancybox介紹，可以將圖片層從頁面中提出展示。<br>  自寫插件，書中還是有不少疏漏，所幸有抓源碼…<br>  發布插件:1.測試是否兼容所有瀏覽器 2.README 說明選項含義及工作原理 3.選擇開源許可協議<br>  打包插件:文檔&lt;4kb則略，否則使用代碼壓縮器最小化文檔<br>  發布:plugins.jquery.com &amp;&amp; code.google.com/hosting<br>  <em>6/10</em></p>
-<h2 id="第十一-amp-十二章"><a href="#第十一-amp-十二章" class="headerlink" title="第十一&amp;十二章"></a>第十一&amp;十二章</h2><p>  用Mod_rewrite模塊重定向用戶瀏覽器，指向pc或mobile web。<br>  說了一下jQuery Mobile、其它移動框架:查了一下，如react_Native，ionic等目前都已經十分強大，書中提的sencha touch從jQtouch而來，也可參考。<br>  jQuery各式資源匯整，論壇、大會等…<br>  <em>8/10</em></p>
-<h2 id="全書總評"><a href="#全書總評" class="headerlink" title="全書總評"></a>全書總評</h2><p>  說明足夠白話，但深入理解不足，大多需靠自已補充(大推jQuery api 中文文檔)，示例易懂，不失精采。<br>  <em>avg: 6.73/10</em></p>
-
-          
+<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><p>  DOM選擇器，過濾器(:eq()/:gt()/:lt()/:not/:even、odd/:empty/:hidden/:visible/:has()…等等，及基於jQuery選擇器所做的一些簡單範例<br>  <em>8.5/10</em><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/11/精彩絕倫的jQuery-全本結論/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -394,33 +389,6 @@
 
 
           
-
-	
-
-		<script type="text/javascript">
-		_hcwp = window._hcwp || [];
-
-		_hcwp.push({widget:"Bloggerstream", widget_id: 93163, selector:".hc-comment-count", label: "{\%COUNT%\}" });
-
-		
-
-		(function() {
-		if("HC_LOAD_INIT" in window)return;
-		HC_LOAD_INIT = true;
-		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
-		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
-		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/93163/"+lang+"/widget.js";
-		var s = document.getElementsByTagName("script")[0];
-		s.parentNode.insertBefore(hcc, s.nextSibling);
-		})();
-		</script>
-
-	
-
-
-
-
-
 
         </div>
         
