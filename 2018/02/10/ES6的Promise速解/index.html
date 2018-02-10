@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="javascript,ECMAScript6," />
 
 
 
@@ -93,15 +93,17 @@
 
 
 
-<meta name="description" content="明鏡止水">
-<meta property="og:type" content="website">
-<meta property="og:title" content="一個人的天空">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="new Promise( function(resolve,reject){ … / executor /})。   executor: 帶有resolve和reject兩個參數的執行體，一旦調用resolve，promise的狀態將變為fulfilled，或發生錯誤時成為rejected。當狀態從pending變為fulfilled或rejected時，結果將不可再改變，此時的Promise稱">
+<meta name="keywords" content="javascript,ECMAScript6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6的Promise速解">
+<meta property="og:url" content="http://yoursite.com/2018/02/10/ES6的Promise速解/index.html">
 <meta property="og:site_name" content="一個人的天空">
-<meta property="og:description" content="明鏡止水">
+<meta property="og:description" content="new Promise( function(resolve,reject){ … / executor /})。   executor: 帶有resolve和reject兩個參數的執行體，一旦調用resolve，promise的狀態將變為fulfilled，或發生錯誤時成為rejected。當狀態從pending變為fulfilled或rejected時，結果將不可再改變，此時的Promise稱">
+<meta property="og:updated_time" content="2018-02-10T11:46:29.659Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一個人的天空">
-<meta name="twitter:description" content="明鏡止水">
+<meta name="twitter:title" content="ES6的Promise速解">
+<meta name="twitter:description" content="new Promise( function(resolve,reject){ … / executor /})。   executor: 帶有resolve和reject兩個參數的執行體，一旦調用resolve，promise的狀態將變為fulfilled，或發生錯誤時成為rejected。當狀態從pending變為fulfilled或rejected時，結果將不可再改變，此時的Promise稱">
 
 
 
@@ -129,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/02/10/ES6的Promise速解/"/>
 
 
 
 
 
-  <title>一個人的天空</title>
+  <title>ES6的Promise速解 | 一個人的天空</title>
   
 
 
@@ -160,9 +162,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -245,9 +245,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -273,9 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/10/ES6的Promise速解/" itemprop="url">ES6的Promise速解</a></h1>
+          <h1 class="post-title" itemprop="name headline">ES6的Promise速解</h1>
         
 
         <div class="post-meta">
@@ -299,6 +297,8 @@
 
           
 		  
+			
+				<span id="busuanzi_container_page_pv">  |  閱讀熱度 <span id="busuanzi_value_page_pv"></span> ℃</span>
 			
 			
           
@@ -336,187 +336,97 @@
       
 
       
-        
-          <blockquote>
+        <blockquote>
 <font color="green" size="4"><strong><em>new Promise( function(resolve,reject){ … /</em> executor <em>/})。</em></strong></font>
 
 </blockquote>
 <p><font color="blue">executor</font>: 帶有<strong><em>resolve</em></strong>和<strong><em>reject</em></strong>兩個參數的執行體，一旦調用resolve，promise的狀態將變為<strong><em>fulfilled</em></strong>，或發生錯誤時成為<strong><em>rejected</em></strong>。<br>當狀態從pending變為fulfilled或rejected時，結果將不可再改變，此時的Promise稱為<strong><em>settled</em></strong>或<strong><em>resolved</em></strong>。</p>
 <p>以下原型方法3種，直接調用方法4種。</p>
 <h2 id="原型"><a href="#原型" class="headerlink" title="原型:"></a>原型:</h2><p>Promise.prototype<font color="#00AA00">.then</font>(<font color="blue">onFulfilled</font> [, onRejected]) : Promise實例擁有的then方法便是用來處理Promise狀態改變時的回調函數，可采用<font color="blue">鏈式寫法</font>(返回新的Promise實例)，第二個rejected回調函數建議以<font color="blue">catch</font>方法處理。<br>Promise.prototype<font color="#00AA00">.catch</font>(<font color="blue">onRejected</font>): 當前面發生錯誤時的回調函數，等同於.then(null, onRejected(err))，但Promise的錯誤具有”冒泡”性質，會一直向後傳遞，直到被捕獲為止，所以<font color="blue">總是用catch取代onRejected回調函數</font>較好。<br>Promise.prototype<font color="#00AA00">.finally()</font> :不論Promise狀態如何，都必定會執行的操作。ES2018才引入標準，故Safari及有些還並不支援。<br>示例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> p=<span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolved,rejected</span>)=&gt;</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'Hi,'</span>);</div><div class="line">	setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>resolved(<span class="string">'all done.'</span>),<span class="number">500</span>);</div><div class="line">&#125;);</div><div class="line">p.then(<span class="built_in">console</span>.log(<span class="string">'there,'</span>)).then(<span class="function"><span class="params">value</span>=&gt;</span><span class="built_in">console</span>.log(value)).catch(<span class="function"><span class="params">e</span>=&gt;</span><span class="built_in">console</span>.log(e));</div><div class="line"><span class="comment">//Hi,</span></div><div class="line"><span class="comment">//there,</span></div><div class="line"><span class="comment">//all done.</span></div></pre></td></tr></table></figure></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/10/ES6的Promise速解/#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+<a id="more"></a> 
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法:"></a>方法:</h2><p><font color="#00AA00">Promise.all(iterable)</font>：接收一個可迭代對象(ex:Array、String)為參數。返回的成員皆為Promise實例，在<font color="blue">所有成員resolved後成為resolved狀態，或其一被reject後成為reject</font>。若返回<font color="blue">reject的成員實現了catch</font>方法，則會在<font color="blue">執行完後成為resolved狀態</font>。否則，將被<font color="blue">Promise.all().catch()</font>所捕獲。<br>示例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> p1=<span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">res,rej</span>)=&gt;</span>&#123;</div><div class="line">  res(<span class="string">'Hello'</span>);</div><div class="line">&#125;);</div><div class="line"><span class="keyword">const</span> p2=<span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">res,rej</span>)=&gt;</span>&#123;</div><div class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Error'</span>);</div><div class="line">&#125;).catch(<span class="function"><span class="params">e</span>=&gt;</span>e.message);</div><div class="line"><span class="built_in">Promise</span>.all([p1,p2]).then(<span class="function"><span class="params">result</span>=&gt;</span><span class="built_in">console</span>.log(result));</div><div class="line"><span class="comment">//[ 'Hello', 'Error' ]</span></div></pre></td></tr></table></figure></p>
+<p><font color="#00AA00">Promise.race(iterable)</font>：同上，如果成員非Promise實例，則會先調用Promise.resolve方法轉成Promise實例，再處理。差別在於<font color="blue">只要其中一成員狀態改變，便以該成員的狀態傳遞給回調</font>。常見用法:處理fetch無限制等待…<br>示例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> p=<span class="built_in">Promise</span>.race([fetch(<span class="string">'/resource'</span>), <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">res,rej</span>)=&gt;</span>&#123;</div><div class="line">	setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>rej(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'wrong..'</span>)),<span class="number">2000</span>)</div><div class="line">	&#125;)]);</div><div class="line">p.then(<span class="function"><span class="params">res</span>=&gt;</span><span class="built_in">console</span>.log(res)).catch(<span class="function"><span class="params">e</span>=&gt;</span><span class="built_in">console</span>.log(e));</div><div class="line"><span class="comment">//若2秒內未收到fetch返回結果，p的狀態就會變成rejected，觸發catch回調。</span></div></pre></td></tr></table></figure></p>
+<p><font color="#00AA00">Promise.resolve(value)</font>：<font color="blue">將value轉為Promise對象</font>，若:</p>
+<ul>
+<li><font color="blue">value = Promise對象，則直接返回該對象。</font></li>
+<li>value是<font color="blue">thenable(具有then方法)的對象</font>，則會<font color="blue">立刻執行then方法後成為resolved狀態</font>成為Promise對象。</li>
+<li><font color="blue">value沒有thenable，則直接返回resolved狀態的Promise對象。value便是回調的參數。</font></li>
+<li>value為空，同上，只是無參數。<br>示例：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> thenable=&#123;</div><div class="line">  then(res,rej)&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'A'</span>);</div><div class="line">    res(<span class="string">'B'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"><span class="built_in">Promise</span>.resolve(thenable).then(<span class="function"><span class="params">v</span>=&gt;</span><span class="built_in">console</span>.log(v));</div><div class="line"><span class="comment">//A</span></div><div class="line"><span class="comment">//B</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> p=<span class="built_in">Promise</span>.resolve(<span class="string">'Hello'</span>);</div><div class="line">p.then(<span class="function"><span class="params">v</span>=&gt;</span><span class="built_in">console</span>.log(v));</div><div class="line"><span class="comment">//Hello</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><font color="#00AA00">Promise.reject(reason)</font>：<font color="blue">返回一個狀態為rejected的Promise對象</font>。與resolve不同的是，<font color="blue">reason是成為原封不動拋出的參數</font>，不論它是對象或其它。<br>示例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> obj=&#123;test()&#123;&#125;&#125;;</div><div class="line"><span class="built_in">Promise</span>.reject(obj).catch(<span class="function"><span class="params">e</span>=&gt;</span><span class="built_in">console</span>.log(e===obj));</div><div class="line"><span class="comment">//true</span></div></pre></td></tr></table></figure></p>
+<hr>
+<p>最後補充一個，已提案未實裝的方法(但Bluebird、Q、When庫已提供): </p>
+<p><font color="#00AA00">Promise.try(fn)</font>：使用Promise.try可以捕獲到Promise對象外所引發的異常，與try語句同意。<br>示例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Promise</span>.try(database.users.get(&#123;<span class="attr">id</span>: userId&#125;))</div><div class="line">  .then(...).catch(...);</div><div class="line"></div><div class="line"><span class="comment">//等同於</span></div><div class="line"></div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">  database.users.get(&#123;<span class="attr">id</span>: userId&#125;)</div><div class="line">  .then(...)</div><div class="line">  .catch(...)</div><div class="line">&#125; <span class="keyword">catch</span> (e) &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/11/精彩絕倫的jQuery-全本結論/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="shayqi">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/shayqi.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一個人的天空">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/11/精彩絕倫的jQuery-全本結論/" itemprop="url">精彩絕倫的jQuery-全本結論</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">發表於</span>
-              
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2017-07-11T15:50:44+08:00">
-                2017-07-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-		  
-			
-			
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
           
-            
-            <!--noindex-->
-              <span class="post-comments-count">
-				&nbsp;|&nbsp;
-				<span class="post-meta-item-icon">
-				<i class="fa fa-comment-o"></i>
-				<a href="/2017/07/11/精彩絕倫的jQuery-全本結論/#comments" itemprop="discussionUrl">
-					<span class="post-comments-count hc-comment-count" data-xid="2017/07/11/精彩絕倫的jQuery-全本結論/" itemprop="commentsCount"></span>
-				</a>
-				</span>
-			  </span>
-			<!--/noindex-->
-            
+            <a href="/tags/ECMAScript6/" rel="tag"># ECMAScript6</a>
           
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>  分析了javascript熱門的第三方庫，為何從中選擇jQuery，振奮人心的開場，用最簡單的方式做最多的實現，<br>  <em>score: 9/10</em></p>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>  安裝流程，說明了$(‘’)的jQuery包裝器，不需要用到$(document).ready(function(){})的地方–與DOM無關的語句，用jQuery別名防止第三方庫的衝突，試圖用jQuery取代javascript?<br>  <em>9/10</em></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/11/精彩絕倫的jQuery-全本結論/#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/11/精彩絕倫的jQuery-全本結論/" rel="next" title="精彩絕倫的jQuery-全本結論">
+                <i class="fa fa-chevron-left"></i> 精彩絕倫的jQuery-全本結論
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
+          <span class="post-nav-divider"></span>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -524,6 +434,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
 
         </div>
         
@@ -544,8 +460,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/shayqi.jpg"
@@ -609,6 +534,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#原型"><span class="nav-number">1.</span> <span class="nav-text">原型:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">2.</span> <span class="nav-text">方法:</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -712,10 +653,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
@@ -739,6 +680,8 @@
 
 		_hcwp.push({widget:"Bloggerstream", widget_id: 93163, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
+		
+		_hcwp.push({widget:"Stream", widget_id: 93163, xid: "2018/02/10/ES6的Promise速解/"});
 		
 
 		(function() {
