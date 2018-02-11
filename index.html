@@ -141,6 +141,15 @@
 
 
 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-92541310-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
 
 
 
@@ -208,12 +217,22 @@
         </li>
       
         
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            歸類
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            階梯
+            時間
           </a>
         </li>
       
@@ -256,7 +275,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/10/ES6的Promise速解/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/10/ES6的Promise速解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="shayqi">
@@ -275,7 +294,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/10/ES6的Promise速解/" itemprop="url">ES6的Promise速解</a></h1>
+                <a class="post-title-link" href="/2018/01/10/ES6的Promise速解/" itemprop="url">ES6的Promise速解</a></h1>
         
 
         <div class="post-meta">
@@ -287,8 +306,8 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-02-10T14:02:26+08:00">
-                2018-02-10
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-01-10T14:02:26+08:00">
+                2018-01-10
               </time>
             
 
@@ -297,6 +316,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ES6/" itemprop="url" rel="index">
+                    <span itemprop="name">ES6</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 		  
 			
@@ -308,8 +349,8 @@
 				&nbsp;|&nbsp;
 				<span class="post-meta-item-icon">
 				<i class="fa fa-comment-o"></i>
-				<a href="/2018/02/10/ES6的Promise速解/#comments" itemprop="discussionUrl">
-					<span class="post-comments-count hc-comment-count" data-xid="2018/02/10/ES6的Promise速解/" itemprop="commentsCount"></span>
+				<a href="/2018/01/10/ES6的Promise速解/#comments" itemprop="discussionUrl">
+					<span class="post-comments-count hc-comment-count" data-xid="2018/01/10/ES6的Promise速解/" itemprop="commentsCount"></span>
 				</a>
 				</span>
 			  </span>
@@ -337,16 +378,14 @@
 
       
         
-          <blockquote>
-<font color="green" size="4"><strong><em>new Promise( function(resolve,reject){ … /</em> executor <em>/})。</em></strong></font>
-
-</blockquote>
+          <p><font color="green" size="4"><em>Promise對象</em></font>，是異步編程的一種解決方案，也可以說是為了解決<a href="http://callbackhell.com/" target="_blank" rel="external"><font size="4"><strong><em>Callback Hell</em></strong></font></a>而應運而生。可以把Promise想像成一個時光瓶，裡面放了來自未來事件(通常是異步操作)的結果。所以Promise對象也就有了三種狀態，<font color="blue">pending</font>(進行中)、<font color="blue">fulfilled</font>(已完成)、<font color="blue">rejected</font>(已失敗)，也只有異步操作的結果可以決定它是哪種狀態，任何操作都無法改變這個狀態，這也符合了<strong><em>Promise</em></strong>(承諾)對象這個名字的由來。<br>當Promise對象從<font color="blue">pending</font>成為<font color="blue">fulfilled</font>或<font color="blue">rejected</font>時，便稱為<strong><em>resolved</em></strong>(已解決)，此時的狀態不論何時回調，其結果都是不變的，這也與事件監聽”機不可失”的方式有很大不同。使用Promise，除了能讓異步操作像同步一樣表達外，它所提供的統一接口也使得操作異步更加容易。<br>然而，現階段Promise還是存在一些缺點。其一，一旦新建便無法取消；其二，當處於pending狀態時，也無法了解已處理到哪一階段(剛開始還是快完成)；其三，如果沒設置回調函數，Promise內部拋出的錯誤，不會反應到外部。</p>
+<p>最後，如果是要處理會不斷發生的事件，<a href="https://nodejs.org/api/stream.html" target="_blank" rel="external">Stream模式</a>會是更優的選擇。</p>
+<h2 id="基本語法"><a href="#基本語法" class="headerlink" title="基本語法"></a>基本語法</h2><p><code bgcolor="grey"><font color="green" size="4"><strong><em>new Promise(function(resolve,reject){ … / executor /})。</em></strong></font></code></p>
 <p><font color="blue">executor</font>: 帶有<strong><em>resolve</em></strong>和<strong><em>reject</em></strong>兩個參數的執行體，一旦調用resolve，promise的狀態將變為<strong><em>fulfilled</em></strong>，或發生錯誤時成為<strong><em>rejected</em></strong>。<br>當狀態從pending變為fulfilled或rejected時，結果將不可再改變，此時的Promise稱為<strong><em>settled</em></strong>或<strong><em>resolved</em></strong>。</p>
 <p>以下原型方法3種，直接調用方法4種。</p>
-<h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><p>Promise.prototype<font color="#00AA00">.then</font>(<font color="blue">onFulfilled</font> [, onRejected]) : Promise實例擁有的then方法便是用來處理Promise狀態改變時的回調函數，可采用<font color="blue">鏈式寫法</font>(返回新的Promise實例)，第二個rejected回調函數建議以<font color="blue">catch</font>方法處理。<br>Promise.prototype<font color="#00AA00">.catch</font>(<font color="blue">onRejected</font>): 當前面發生錯誤時的回調函數，等同於.then(null, onRejected(err))，但Promise的錯誤具有”冒泡”性質，會一直向後傳遞，直到被捕獲為止，所以<font color="blue">總是用catch取代onRejected回調函數</font>較好。<br>Promise.prototype<font color="#00AA00">.finally()</font> :不論Promise狀態如何，都必定會執行的操作。ES2018才引入標準，故Safari及有些還並不支援。<br>示例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> p=<span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolved,rejected</span>)=&gt;</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'Hi,'</span>);</div><div class="line">	setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>resolved(<span class="string">'all done.'</span>),<span class="number">500</span>);</div><div class="line">&#125;);</div><div class="line">p.then(<span class="built_in">console</span>.log(<span class="string">'there,'</span>)).then(<span class="function"><span class="params">value</span>=&gt;</span><span class="built_in">console</span>.log(value)).catch(<span class="function"><span class="params">e</span>=&gt;</span><span class="built_in">console</span>.log(e));</div><div class="line"><span class="comment">//Hi,</span></div><div class="line"><span class="comment">//there,</span></div><div class="line"><span class="comment">//all done.</span></div></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/10/ES6的Promise速解/#more" rel="contents">
+            <a class="btn" href="/2018/01/10/ES6的Promise速解/#more" rel="contents">
               閱讀全文 &raquo;
             </a>
           </div>
@@ -433,6 +472,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/讀書心得/" itemprop="url" rel="index">
+                    <span itemprop="name">讀書心得</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 		  
 			
@@ -566,6 +627,15 @@
             </div>
           
 
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分類</span>
+              </a>
+            </div>
           
 
           
